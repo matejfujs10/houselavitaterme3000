@@ -231,6 +231,9 @@ const en: Dict = {
     ctaBook: "BOOK NOW",
     urgent: "May and summer dates fill up fast! Book now to lock in the lower price.",
     discountBadge: "UP TO 30% OFF",
+    floatingBadge: "AVAILABLE: Last summer 2026 dates!",
+    quickFrom: "From",
+    quickNight: "/night · all included",
   },
   value: {
     title: "Everything included",
@@ -243,6 +246,15 @@ const en: Dict = {
       { title: "50 m² house (2–6 guests)", desc: "Dormeo mattresses, A/C, fully equipped kitchen, TV." },
       { title: "Parking next to the house", desc: "Total privacy in a quiet, green setting." },
     ],
+    valueTitle: "Why guests choose House La Vita",
+    valueSubtitle: "Three reasons you'll book tonight.",
+    highlights: [
+      { tag: "FREE", title: "2× full-day Terme 3000 passes", desc: "Save €40+ per day — included with every booking." },
+      { tag: "LUXURY", title: "Dormeo mattresses for cloud-like sleep", desc: "Premium anatomic mattresses in every bedroom." },
+      { tag: "PRIVACY", title: "2× private terraces — no neighbours", desc: "Total seclusion in a green setting — your pace, your peace." },
+    ],
+    trustTitle: "Why trust us",
+    trust: ["Verified host", "Secure booking", "iCal synced (real-time)", "Reply within 24h"],
   },
   pricing: {
     title: "Transparent pricing",
@@ -261,6 +273,18 @@ const en: Dict = {
     subtitle: "Real reviews from Facebook.",
     verified: "Verified guest",
     viewAll: "View all reviews on Facebook",
+  },
+  faq: {
+    title: "Frequently asked questions",
+    subtitle: "Everything you need to know before booking.",
+    items: [
+      { q: "How does booking work?", a: "Pick your dates, fill in the form, and within 24h we confirm availability and send payment instructions." },
+      { q: "Are the pool tickets really included?", a: "Yes — 2× full-day tickets to Terme 3000 are included in every booking, regardless of length of stay." },
+      { q: "How many guests fit?", a: "The 50 m² house comfortably hosts 2–6 people. Children up to 5 stay free." },
+      { q: "What is the cancellation policy?", a: "Free cancellation up to 30 days before arrival. Between 30 and 14 days we retain a 50% deposit." },
+      { q: "Are the bikes really included?", a: "Yes — 4 bikes for adults and kids plus sports gear are free for guests." },
+      { q: "Can we bring a pet?", a: "On request — please contact us before booking so we can align on details." },
+    ],
   },
   booking: {
     title: "Book your stay",
@@ -290,6 +314,9 @@ const en: Dict = {
     invalidRange: "Selected dates are already booked.",
     nightLabel: "night",
     nightsLabel: "nights",
+    originalPrice: "Regular price",
+    youSave: "You save",
+    bestValue: "BEST VALUE",
   },
   footer: {
     tagline: "Premium holiday house next to Terme 3000.",
