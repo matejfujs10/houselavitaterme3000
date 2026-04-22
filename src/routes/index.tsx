@@ -1,26 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { I18nProvider } from "@/components/I18nProvider";
+import { Header } from "@/components/site/Header";
+import { Hero } from "@/components/site/Hero";
+import { ValueStack } from "@/components/site/ValueStack";
+import { PricingStrip } from "@/components/site/PricingStrip";
+import { Gallery } from "@/components/site/Gallery";
+import { Reviews } from "@/components/site/Reviews";
+import { BookingSection } from "@/components/site/BookingSection";
+import { Footer } from "@/components/site/Footer";
+import { MobileBookCTA } from "@/components/site/MobileBookCTA";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <I18nProvider>
+      <div className="min-h-screen bg-background text-foreground">
+        <Header />
+        <main>
+          <Hero />
+          <ValueStack />
+          <PricingStrip />
+          <Gallery />
+          <Reviews />
+          <BookingSection />
+        </main>
+        <Footer />
+        <MobileBookCTA />
+      </div>
+    </I18nProvider>
+  );
 }
