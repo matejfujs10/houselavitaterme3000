@@ -129,6 +129,7 @@ const sl: Dict = {
     floatingBadge: "PROSTO: Zadnji termini za poletje 2026!",
     quickFrom: "Že od",
     quickNight: "/noč · vse vključeno",
+    distanceBadge: "50 m do bazenov",
   },
   value: {
     title: "Vse vključeno v ceno",
@@ -150,6 +151,8 @@ const sl: Dict = {
     ],
     trustTitle: "Zakaj nam zaupati",
     trust: ["Preverjen gostitelj", "Varna rezervacija", "iCal sinhronizirano (real-time)", "Odgovor v 24h"],
+    campBanner: "Doživi kampiranje v enem izmed najbolj priljubljenih kampov v Sloveniji",
+    distancePin: "Termalni kompleks je od hiške oddaljen le 50 m",
   },
   pricing: {
     title: "Transparentne cene",
