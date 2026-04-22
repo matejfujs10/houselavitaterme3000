@@ -2,7 +2,7 @@ import { useI18n } from "@/lib/i18n";
 import heroImg from "@/assets/exterior-house.png";
 import termeImg from "@/assets/terme-3000-pools.jpg";
 import { useEffect, useState } from "react";
-import { ShieldCheck, Sparkles, Calendar } from "lucide-react";
+import { ShieldCheck, Sparkles, Calendar, MapPin } from "lucide-react";
 
 export function Hero() {
   const { t } = useI18n();
@@ -93,6 +93,10 @@ export function Hero() {
                 <div className="flex items-baseline gap-1 mb-4">
                   <span className="font-display text-5xl text-gradient-gold font-bold">80€</span>
                   <span className="text-sm text-cream/80">{t.hero.quickNight}</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 mb-4 bg-gold-bright/15 border border-gold-bright/40 text-gold-bright text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                  <MapPin className="w-3.5 h-3.5" />
+                  {t.hero.distanceBadge}
                 </div>
                 <button
                   onClick={() => scrollTo("booking")}
