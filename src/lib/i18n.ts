@@ -240,6 +240,7 @@ const en: Dict = {
     floatingBadge: "AVAILABLE: Last summer 2026 dates!",
     quickFrom: "From",
     quickNight: "/night · all included",
+    distanceBadge: "50 m to the pools",
   },
   value: {
     title: "Everything included",
@@ -261,6 +262,8 @@ const en: Dict = {
     ],
     trustTitle: "Why trust us",
     trust: ["Verified host", "Secure booking", "iCal synced (real-time)", "Reply within 24h"],
+    campBanner: "Experience camping at one of Slovenia's most popular campsites",
+    distancePin: "The thermal complex is just 50 m from the house",
   },
   pricing: {
     title: "Transparent pricing",
