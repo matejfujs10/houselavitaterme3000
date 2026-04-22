@@ -36,6 +36,7 @@ type Dict = {
     floatingBadge: string;
     quickFrom: string;
     quickNight: string;
+    distanceBadge: string;
   };
   value: {
     title: string;
@@ -46,6 +47,8 @@ type Dict = {
     highlights: { tag: string; title: string; desc: string }[];
     trustTitle: string;
     trust: string[];
+    campBanner: string;
+    distancePin: string;
   };
   pricing: {
     title: string;
@@ -126,6 +129,7 @@ const sl: Dict = {
     floatingBadge: "PROSTO: Zadnji termini za poletje 2026!",
     quickFrom: "Že od",
     quickNight: "/noč · vse vključeno",
+    distanceBadge: "50 m do bazenov",
   },
   value: {
     title: "Vse vključeno v ceno",
@@ -147,6 +151,8 @@ const sl: Dict = {
     ],
     trustTitle: "Zakaj nam zaupati",
     trust: ["Preverjen gostitelj", "Varna rezervacija", "iCal sinhronizirano (real-time)", "Odgovor v 24h"],
+    campBanner: "Doživi kampiranje v enem izmed najbolj priljubljenih kampov v Sloveniji",
+    distancePin: "Termalni kompleks je od hiške oddaljen le 50 m",
   },
   pricing: {
     title: "Transparentne cene",
@@ -234,6 +240,7 @@ const en: Dict = {
     floatingBadge: "AVAILABLE: Last summer 2026 dates!",
     quickFrom: "From",
     quickNight: "/night · all included",
+    distanceBadge: "50 m to the pools",
   },
   value: {
     title: "Everything included",
@@ -255,6 +262,8 @@ const en: Dict = {
     ],
     trustTitle: "Why trust us",
     trust: ["Verified host", "Secure booking", "iCal synced (real-time)", "Reply within 24h"],
+    campBanner: "Experience camping at one of Slovenia's most popular campsites",
+    distancePin: "The thermal complex is just 50 m from the house",
   },
   pricing: {
     title: "Transparent pricing",
@@ -342,6 +351,7 @@ const de: Dict = {
     floatingBadge: "FREI: Letzte Termine Sommer 2026!",
     quickFrom: "Ab",
     quickNight: "/Nacht · alles inklusive",
+    distanceBadge: "50 m bis zu den Pools",
   },
   value: {
     title: "Alles inklusive",
@@ -363,6 +373,8 @@ const de: Dict = {
     ],
     trustTitle: "Warum uns vertrauen",
     trust: ["Verifizierter Gastgeber", "Sichere Buchung", "iCal synchronisiert (Echtzeit)", "Antwort in 24h"],
+    campBanner: "Erleben Sie Camping auf einem der beliebtesten Campingplätze Sloweniens",
+    distancePin: "Der Thermalkomplex ist nur 50 m vom Haus entfernt",
   },
   pricing: {
     title: "Transparente Preise",
@@ -450,6 +462,7 @@ const hr: Dict = {
     floatingBadge: "SLOBODNO: Zadnji termini ljeto 2026!",
     quickFrom: "Već od",
     quickNight: "/noć · sve uključeno",
+    distanceBadge: "50 m do bazena",
   },
   value: {
     title: "Sve uključeno u cijenu",
@@ -471,6 +484,8 @@ const hr: Dict = {
     ],
     trustTitle: "Zašto nam vjerovati",
     trust: ["Provjereni domaćin", "Sigurna rezervacija", "iCal sinkronizirano (real-time)", "Odgovor u 24h"],
+    campBanner: "Doživite kampiranje u jednom od najpopularnijih kampova u Sloveniji",
+    distancePin: "Termalni kompleks je udaljen samo 50 m od kućice",
   },
   pricing: {
     title: "Transparentne cijene",

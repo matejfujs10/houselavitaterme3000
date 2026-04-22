@@ -2,7 +2,7 @@ import { useI18n } from "@/lib/i18n";
 import heroImg from "@/assets/exterior-house.png";
 import termeImg from "@/assets/terme-3000-pools.jpg";
 import { useEffect, useState } from "react";
-import { ShieldCheck, Sparkles, Calendar } from "lucide-react";
+import { ShieldCheck, Sparkles, Calendar, MapPin } from "lucide-react";
 
 export function Hero() {
   const { t } = useI18n();
@@ -62,6 +62,11 @@ export function Hero() {
             <span className="h-2 w-2 rounded-full bg-urgent animate-pulse" />
             {t.hero.urgent}
           </div>
+
+          <div className="mt-4 inline-flex items-center gap-2 bg-gradient-gold text-walnut-deep rounded-full px-4 py-2 text-xs sm:text-sm font-bold shadow-gold sm:ml-3">
+            <MapPin className="w-4 h-4" strokeWidth={2.5} />
+            {t.hero.distanceBadge}
+          </div>
         </div>
 
         <div className="lg:col-span-5 hidden lg:block animate-float-up" style={{ animationDelay: "0.2s" }}>
@@ -93,6 +98,10 @@ export function Hero() {
                 <div className="flex items-baseline gap-1 mb-4">
                   <span className="font-display text-5xl text-gradient-gold font-bold">80€</span>
                   <span className="text-sm text-cream/80">{t.hero.quickNight}</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 mb-4 bg-gold-bright/15 border border-gold-bright/40 text-gold-bright text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                  <MapPin className="w-3.5 h-3.5" />
+                  {t.hero.distanceBadge}
                 </div>
                 <button
                   onClick={() => scrollTo("booking")}
