@@ -33,11 +33,19 @@ type Dict = {
     ctaBook: string;
     urgent: string;
     discountBadge: string;
+    floatingBadge: string;
+    quickFrom: string;
+    quickNight: string;
   };
   value: {
     title: string;
     subtitle: string;
     items: { title: string; desc: string }[];
+    valueTitle: string;
+    valueSubtitle: string;
+    highlights: { tag: string; title: string; desc: string }[];
+    trustTitle: string;
+    trust: string[];
   };
   pricing: {
     title: string;
@@ -56,6 +64,11 @@ type Dict = {
     subtitle: string;
     verified: string;
     viewAll: string;
+  };
+  faq: {
+    title: string;
+    subtitle: string;
+    items: { q: string; a: string }[];
   };
   booking: {
     title: string;
@@ -85,6 +98,9 @@ type Dict = {
     invalidRange: string;
     nightLabel: string;
     nightsLabel: string;
+    originalPrice: string;
+    youSave: string;
+    bestValue: string;
   };
   footer: {
     tagline: string;
