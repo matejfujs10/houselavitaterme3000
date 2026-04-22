@@ -36,6 +36,7 @@ type Dict = {
     floatingBadge: string;
     quickFrom: string;
     quickNight: string;
+    distanceBadge: string;
   };
   value: {
     title: string;
@@ -46,6 +47,8 @@ type Dict = {
     highlights: { tag: string; title: string; desc: string }[];
     trustTitle: string;
     trust: string[];
+    campBanner: string;
+    distancePin: string;
   };
   pricing: {
     title: string;
