@@ -29,13 +29,17 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Hiška LA VITA · Terme 3000 Moravske Toplice — do 30% ceneje" },
+      { title: "House LA VITA · Terme 3000 Moravske Toplice — do 30% ceneje" },
       { name: "description", content: "Premium počitniška hiška za 2–6 oseb tik ob Termah 3000. Vključene kopalne karte, kolesa in popolna zasebnost. Rezervirajte zdaj." },
       { name: "author", content: "Hiška LA VITA" },
-      { property: "og:title", content: "Hiška LA VITA · Terme 3000 — do 30% ceneje" },
-      { property: "og:description", content: "Družinski oddih ob Termah 3000. Hiška 50 m² · vključene karte, kolesa in vse za sproščen oddih." },
+      { property: "og:title", content: "House LA VITA · Terme 3000 Moravske Toplice — do 30% ceneje" },
+      { property: "og:description", content: "Premium počitniška hiška za 2–6 oseb tik ob Termah 3000. Vključene kopalne karte, kolesa in popolna zasebnost. Rezervirajte zdaj." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "House LA VITA · Terme 3000 Moravske Toplice — do 30% ceneje" },
+      { name: "twitter:description", content: "Premium počitniška hiška za 2–6 oseb tik ob Termah 3000. Vključene kopalne karte, kolesa in popolna zasebnost. Rezervirajte zdaj." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/laTvyULOLRSQ9fwirhVawQymjvw1/social-images/social-1776890202686-La_Vita_Kamp_Terme_3000_Moravske_Toplice.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/laTvyULOLRSQ9fwirhVawQymjvw1/social-images/social-1776890202686-La_Vita_Kamp_Terme_3000_Moravske_Toplice.webp" },
     ],
     links: [
       {
