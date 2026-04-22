@@ -1,7 +1,9 @@
 import { useI18n } from "@/lib/i18n";
-import { Ticket, TicketPercent, Baby, Bike, Home, Car } from "lucide-react";
+import { Ticket, TicketPercent, Baby, Bike, Home, Car, Gift, BedDouble, Trees, ShieldCheck, RefreshCcw, Clock } from "lucide-react";
 
 const ICONS = [Ticket, TicketPercent, Baby, Bike, Home, Car];
+const HIGHLIGHT_ICONS = [Gift, BedDouble, Trees];
+const TRUST_ICONS = [ShieldCheck, ShieldCheck, RefreshCcw, Clock];
 
 export function ValueStack() {
   const { t } = useI18n();
@@ -9,6 +11,42 @@ export function ValueStack() {
   return (
     <section id="features" className="py-20 sm:py-28 bg-gradient-warm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* High-impact value stack */}
+        <div className="text-center mb-12">
+          <span className="text-xs uppercase tracking-[0.3em] text-gold-deep font-semibold">
+            ★ Premium boutique
+          </span>
+          <h2 className="font-display text-3xl sm:text-5xl text-walnut mt-3 mb-4">
+            {t.value.valueTitle}
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">{t.value.valueSubtitle}</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-5 mb-20">
+          {t.value.highlights.map((h, i) => {
+            const Icon = HIGHLIGHT_ICONS[i] ?? Gift;
+            return (
+              <div
+                key={i}
+                className="group relative bg-card rounded-3xl p-7 shadow-luxe hover:-translate-y-2 transition-luxe border border-gold/30 overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-gold opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-luxe" />
+                <span className="relative inline-block bg-gradient-gold text-walnut-deep text-[10px] font-black tracking-widest px-3 py-1 rounded-full mb-4">
+                  {h.tag}
+                </span>
+                <div className="relative w-14 h-14 rounded-2xl bg-walnut text-gold-bright flex items-center justify-center mb-4 shadow-card group-hover:scale-110 transition-luxe">
+                  <Icon className="w-7 h-7" strokeWidth={2} />
+                </div>
+                <h3 className="relative font-display text-xl text-walnut mb-2 font-bold leading-tight">
+                  {h.title}
+                </h3>
+                <p className="relative text-sm text-muted-foreground leading-relaxed">{h.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* All-inclusive bento */}
         <div className="text-center mb-14">
           <span className="text-xs uppercase tracking-[0.3em] text-gold-deep font-semibold">
             ✓ All inclusive
@@ -37,6 +75,31 @@ export function ValueStack() {
               </div>
             );
           })}
+        </div>
+
+        {/* Trust badges */}
+        <div className="mt-16 bg-card/60 backdrop-blur rounded-3xl p-6 sm:p-8 border border-border/60 shadow-card">
+          <div className="text-center mb-5">
+            <span className="text-xs uppercase tracking-[0.3em] text-gold-deep font-semibold">
+              {t.value.trustTitle}
+            </span>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {t.value.trust.map((label, i) => {
+              const Icon = TRUST_ICONS[i] ?? ShieldCheck;
+              return (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 p-4 rounded-2xl bg-gradient-warm border border-gold/20"
+                >
+                  <div className="w-10 h-10 rounded-full bg-walnut text-gold-bright flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5" strokeWidth={2.2} />
+                  </div>
+                  <span className="text-sm font-semibold text-walnut leading-tight">{label}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

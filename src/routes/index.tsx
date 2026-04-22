@@ -7,6 +7,7 @@ import { PricingStrip } from "@/components/site/PricingStrip";
 import { Gallery } from "@/components/site/Gallery";
 import { Reviews } from "@/components/site/Reviews";
 import { BookingSection } from "@/components/site/BookingSection";
+import { Faq } from "@/components/site/Faq";
 import { Footer } from "@/components/site/Footer";
 import { MobileBookCTA } from "@/components/site/MobileBookCTA";
 
@@ -25,6 +26,7 @@ function Index() {
           <PricingStrip />
           <Gallery />
           <Reviews />
+          <Faq />
           <BookingSection />
         </main>
         <Footer />

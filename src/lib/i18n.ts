@@ -33,11 +33,19 @@ type Dict = {
     ctaBook: string;
     urgent: string;
     discountBadge: string;
+    floatingBadge: string;
+    quickFrom: string;
+    quickNight: string;
   };
   value: {
     title: string;
     subtitle: string;
     items: { title: string; desc: string }[];
+    valueTitle: string;
+    valueSubtitle: string;
+    highlights: { tag: string; title: string; desc: string }[];
+    trustTitle: string;
+    trust: string[];
   };
   pricing: {
     title: string;
@@ -56,6 +64,11 @@ type Dict = {
     subtitle: string;
     verified: string;
     viewAll: string;
+  };
+  faq: {
+    title: string;
+    subtitle: string;
+    items: { q: string; a: string }[];
   };
   booking: {
     title: string;
@@ -85,6 +98,9 @@ type Dict = {
     invalidRange: string;
     nightLabel: string;
     nightsLabel: string;
+    originalPrice: string;
+    youSave: string;
+    bestValue: string;
   };
   footer: {
     tagline: string;
@@ -107,6 +123,9 @@ const sl: Dict = {
     ctaBook: "REZERVIRAJ ZDAJ",
     urgent: "Majski in poletni termini se hitro polnijo! Rezervirajte zdaj po ugodnejši ceni.",
     discountBadge: "DO 30% CENEJE",
+    floatingBadge: "PROSTO: Zadnji termini za poletje 2026!",
+    quickFrom: "Že od",
+    quickNight: "/noč · vse vključeno",
   },
   value: {
     title: "Vse vključeno v ceno",
@@ -119,6 +138,15 @@ const sl: Dict = {
       { title: "Hiška 50 m² (2–6 oseb)", desc: "Dormeo ležišča, klima, polno opremljena kuhinja, TV." },
       { title: "Parkirišče tik ob hiški", desc: "Popolna zasebnost in mir v zelenem objemu." },
     ],
+    valueTitle: "Zakaj gostje izberejo Hiško La Vita?",
+    valueSubtitle: "Trije razlogi, zakaj boste rezervirali že nocoj.",
+    highlights: [
+      { tag: "BREZPLAČNO", title: "2× celodnevne karte za Terme 3000", desc: "Prihranek 40€+ dnevno — vključeno v ceno najema." },
+      { tag: "LUKSUZ", title: "Dormeo jogiji za spanec kot v oblakih", desc: "Anatomske vzmetnice premium kakovosti za vsako sobo." },
+      { tag: "ZASEBNOST", title: "2× lastna terasa brez sosedov", desc: "Popolna zasebnost v zelenem objemu — vaš mir, vaš ritem." },
+    ],
+    trustTitle: "Zakaj nam zaupati",
+    trust: ["Preverjen gostitelj", "Varna rezervacija", "iCal sinhronizirano (real-time)", "Odgovor v 24h"],
   },
   pricing: {
     title: "Transparentne cene",
@@ -137,6 +165,18 @@ const sl: Dict = {
     subtitle: "Resnične ocene s Facebooka.",
     verified: "Preverjen gost",
     viewAll: "Vse ocene na Facebooku",
+  },
+  faq: {
+    title: "Pogosta vprašanja",
+    subtitle: "Vse, kar morate vedeti pred rezervacijo.",
+    items: [
+      { q: "Kako poteka rezervacija?", a: "Izberete datume, izpolnite obrazec in v 24 urah vam potrdimo razpoložljivost ter pošljemo navodila za plačilo." },
+      { q: "Ali so kopalne karte res vključene?", a: "Da — 2× celodnevni karti za Terme 3000 sta vključeni v ceno za vsako rezervacijo, ne glede na število noči." },
+      { q: "Koliko gostov sprejme hiška?", a: "Hiška ima 50 m² in udobno sprejme od 2 do 6 oseb. Otroci do 5. leta so brezplačno." },
+      { q: "Kakšna je politika odpovedi?", a: "Brezplačna odpoved do 30 dni pred prihodom. Med 30 in 14 dnevi pred prihodom zadržimo 50% akontacije." },
+      { q: "So kolesa zares vključena?", a: "Da — 4× kolesa za odrasle in otroke so vam na voljo brezplačno, prav tako športni rekviziti." },
+      { q: "Ali je možen prihod s hišnim ljubljenčkom?", a: "Po dogovoru — kontaktirajte nas pred rezervacijo, da uskladimo podrobnosti." },
+    ],
   },
   booking: {
     title: "Rezervirajte svoj termin",
@@ -166,6 +206,9 @@ const sl: Dict = {
     invalidRange: "Izbrani datumi so že zasedeni.",
     nightLabel: "noč",
     nightsLabel: "noči",
+    originalPrice: "Redna cena",
+    youSave: "Prihranek",
+    bestValue: "NAJBOLJŠA VREDNOST",
   },
   footer: {
     tagline: "Premium počitniška hiška ob Termah 3000.",
@@ -188,6 +231,9 @@ const en: Dict = {
     ctaBook: "BOOK NOW",
     urgent: "May and summer dates fill up fast! Book now to lock in the lower price.",
     discountBadge: "UP TO 30% OFF",
+    floatingBadge: "AVAILABLE: Last summer 2026 dates!",
+    quickFrom: "From",
+    quickNight: "/night · all included",
   },
   value: {
     title: "Everything included",
@@ -200,6 +246,15 @@ const en: Dict = {
       { title: "50 m² house (2–6 guests)", desc: "Dormeo mattresses, A/C, fully equipped kitchen, TV." },
       { title: "Parking next to the house", desc: "Total privacy in a quiet, green setting." },
     ],
+    valueTitle: "Why guests choose House La Vita",
+    valueSubtitle: "Three reasons you'll book tonight.",
+    highlights: [
+      { tag: "FREE", title: "2× full-day Terme 3000 passes", desc: "Save €40+ per day — included with every booking." },
+      { tag: "LUXURY", title: "Dormeo mattresses for cloud-like sleep", desc: "Premium anatomic mattresses in every bedroom." },
+      { tag: "PRIVACY", title: "2× private terraces — no neighbours", desc: "Total seclusion in a green setting — your pace, your peace." },
+    ],
+    trustTitle: "Why trust us",
+    trust: ["Verified host", "Secure booking", "iCal synced (real-time)", "Reply within 24h"],
   },
   pricing: {
     title: "Transparent pricing",
@@ -218,6 +273,18 @@ const en: Dict = {
     subtitle: "Real reviews from Facebook.",
     verified: "Verified guest",
     viewAll: "View all reviews on Facebook",
+  },
+  faq: {
+    title: "Frequently asked questions",
+    subtitle: "Everything you need to know before booking.",
+    items: [
+      { q: "How does booking work?", a: "Pick your dates, fill in the form, and within 24h we confirm availability and send payment instructions." },
+      { q: "Are the pool tickets really included?", a: "Yes — 2× full-day tickets to Terme 3000 are included in every booking, regardless of length of stay." },
+      { q: "How many guests fit?", a: "The 50 m² house comfortably hosts 2–6 people. Children up to 5 stay free." },
+      { q: "What is the cancellation policy?", a: "Free cancellation up to 30 days before arrival. Between 30 and 14 days we retain a 50% deposit." },
+      { q: "Are the bikes really included?", a: "Yes — 4 bikes for adults and kids plus sports gear are free for guests." },
+      { q: "Can we bring a pet?", a: "On request — please contact us before booking so we can align on details." },
+    ],
   },
   booking: {
     title: "Book your stay",
@@ -247,6 +314,9 @@ const en: Dict = {
     invalidRange: "Selected dates are already booked.",
     nightLabel: "night",
     nightsLabel: "nights",
+    originalPrice: "Regular price",
+    youSave: "You save",
+    bestValue: "BEST VALUE",
   },
   footer: {
     tagline: "Premium holiday house next to Terme 3000.",
@@ -269,6 +339,9 @@ const de: Dict = {
     ctaBook: "JETZT BUCHEN",
     urgent: "Mai- und Sommertermine sind schnell ausgebucht! Jetzt zum günstigeren Preis sichern.",
     discountBadge: "BIS ZU 30% RABATT",
+    floatingBadge: "FREI: Letzte Termine Sommer 2026!",
+    quickFrom: "Ab",
+    quickNight: "/Nacht · alles inklusive",
   },
   value: {
     title: "Alles inklusive",
@@ -281,6 +354,15 @@ const de: Dict = {
       { title: "Haus 50 m² (2–6 Personen)", desc: "Dormeo-Matratzen, Klima, voll ausgestattete Küche, TV." },
       { title: "Parkplatz direkt am Haus", desc: "Volle Privatsphäre im grünen Idyll." },
     ],
+    valueTitle: "Warum Gäste Haus La Vita wählen",
+    valueSubtitle: "Drei Gründe, heute Abend zu buchen.",
+    highlights: [
+      { tag: "GRATIS", title: "2× Tageskarten Terme 3000", desc: "Ersparnis 40€+ pro Tag — bei jeder Buchung inklusive." },
+      { tag: "LUXUS", title: "Dormeo-Matratzen für Schlaf wie auf Wolken", desc: "Anatomische Premium-Matratzen in jedem Schlafzimmer." },
+      { tag: "PRIVATSPHÄRE", title: "2× private Terrassen — keine Nachbarn", desc: "Volle Abgeschiedenheit im Grünen — Ihr Tempo, Ihre Ruhe." },
+    ],
+    trustTitle: "Warum uns vertrauen",
+    trust: ["Verifizierter Gastgeber", "Sichere Buchung", "iCal synchronisiert (Echtzeit)", "Antwort in 24h"],
   },
   pricing: {
     title: "Transparente Preise",
@@ -299,6 +381,18 @@ const de: Dict = {
     subtitle: "Echte Bewertungen von Facebook.",
     verified: "Verifizierter Gast",
     viewAll: "Alle Bewertungen auf Facebook ansehen",
+  },
+  faq: {
+    title: "Häufige Fragen",
+    subtitle: "Alles, was Sie vor der Buchung wissen müssen.",
+    items: [
+      { q: "Wie funktioniert die Buchung?", a: "Daten wählen, Formular ausfüllen, innerhalb 24h bestätigen wir die Verfügbarkeit und senden Zahlungsanweisungen." },
+      { q: "Sind die Thermenkarten wirklich inklusive?", a: "Ja — 2× Tageskarten für Terme 3000 sind in jeder Buchung enthalten, unabhängig von der Aufenthaltsdauer." },
+      { q: "Wie viele Gäste passen ins Haus?", a: "Das 50 m² Haus bietet Platz für 2–6 Personen. Kinder bis 5 Jahre gratis." },
+      { q: "Wie ist die Stornierungsbedingung?", a: "Kostenlose Stornierung bis 30 Tage vor Anreise. Zwischen 30 und 14 Tagen behalten wir 50% der Anzahlung ein." },
+      { q: "Sind die Fahrräder wirklich inklusive?", a: "Ja — 4 Fahrräder für Erwachsene und Kinder sowie Sportausrüstung sind kostenlos." },
+      { q: "Können wir ein Haustier mitbringen?", a: "Auf Anfrage — bitte vor der Buchung kontaktieren, um Details abzustimmen." },
+    ],
   },
   booking: {
     title: "Aufenthalt buchen",
@@ -328,6 +422,9 @@ const de: Dict = {
     invalidRange: "Ausgewählte Daten sind bereits belegt.",
     nightLabel: "Nacht",
     nightsLabel: "Nächte",
+    originalPrice: "Regulärer Preis",
+    youSave: "Ersparnis",
+    bestValue: "BESTER WERT",
   },
   footer: {
     tagline: "Premium Ferienhaus an den Terme 3000.",
@@ -350,6 +447,9 @@ const hr: Dict = {
     ctaBook: "REZERVIRAJ ODMAH",
     urgent: "Svibanjski i ljetni termini brzo se popunjavaju! Rezervirajte sada po nižoj cijeni.",
     discountBadge: "DO 30% JEFTINIJE",
+    floatingBadge: "SLOBODNO: Zadnji termini ljeto 2026!",
+    quickFrom: "Već od",
+    quickNight: "/noć · sve uključeno",
   },
   value: {
     title: "Sve uključeno u cijenu",
@@ -362,6 +462,15 @@ const hr: Dict = {
       { title: "Kućica 50 m² (2–6 osoba)", desc: "Dormeo madraci, klima, opremljena kuhinja, TV." },
       { title: "Parking uz kućicu", desc: "Potpuna privatnost u zelenom okruženju." },
     ],
+    valueTitle: "Zašto gosti biraju Kućicu La Vita",
+    valueSubtitle: "Tri razloga zašto ćete rezervirati još večeras.",
+    highlights: [
+      { tag: "BESPLATNO", title: "2× cjelodnevne ulaznice Terme 3000", desc: "Ušteda 40€+ dnevno — uključeno u svaku rezervaciju." },
+      { tag: "LUKSUZ", title: "Dormeo madraci za san kao u oblacima", desc: "Anatomski premium madraci u svakoj sobi." },
+      { tag: "PRIVATNOST", title: "2× privatne terase — bez susjeda", desc: "Potpuna privatnost u zelenom okruženju — vaš ritam, vaš mir." },
+    ],
+    trustTitle: "Zašto nam vjerovati",
+    trust: ["Provjereni domaćin", "Sigurna rezervacija", "iCal sinkronizirano (real-time)", "Odgovor u 24h"],
   },
   pricing: {
     title: "Transparentne cijene",
@@ -380,6 +489,18 @@ const hr: Dict = {
     subtitle: "Stvarne recenzije s Facebooka.",
     verified: "Provjereni gost",
     viewAll: "Sve recenzije na Facebooku",
+  },
+  faq: {
+    title: "Česta pitanja",
+    subtitle: "Sve što trebate znati prije rezervacije.",
+    items: [
+      { q: "Kako ide rezervacija?", a: "Odaberite datume, ispunite obrazac i u roku 24h potvrđujemo dostupnost te šaljemo upute za plaćanje." },
+      { q: "Jesu li ulaznice za bazen stvarno uključene?", a: "Da — 2× cjelodnevne ulaznice za Terme 3000 uključene su u svaku rezervaciju, neovisno o broju noći." },
+      { q: "Koliko gostiju može u kućicu?", a: "Kućica od 50 m² udobno prima 2–6 osoba. Djeca do 5 godina besplatno." },
+      { q: "Kakva je politika otkazivanja?", a: "Besplatno otkazivanje do 30 dana prije dolaska. Između 30 i 14 dana zadržavamo 50% akontacije." },
+      { q: "Jesu li bicikli stvarno uključeni?", a: "Da — 4 bicikla za odrasle i djecu te sportska oprema su besplatni." },
+      { q: "Možemo li dovesti kućnog ljubimca?", a: "Po dogovoru — kontaktirajte nas prije rezervacije za detalje." },
+    ],
   },
   booking: {
     title: "Rezervirajte boravak",
@@ -409,6 +530,9 @@ const hr: Dict = {
     invalidRange: "Odabrani datumi su zauzeti.",
     nightLabel: "noć",
     nightsLabel: "noći",
+    originalPrice: "Redovna cijena",
+    youSave: "Ušteda",
+    bestValue: "NAJBOLJA VRIJEDNOST",
   },
   footer: {
     tagline: "Premium kućica za odmor uz Terme 3000.",
