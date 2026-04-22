@@ -62,6 +62,11 @@ export function Hero() {
             <span className="h-2 w-2 rounded-full bg-urgent animate-pulse" />
             {t.hero.urgent}
           </div>
+
+          <div className="mt-4 inline-flex items-center gap-2 bg-gradient-gold text-walnut-deep rounded-full px-4 py-2 text-xs sm:text-sm font-bold shadow-gold sm:ml-3">
+            <MapPin className="w-4 h-4" strokeWidth={2.5} />
+            {t.hero.distanceBadge}
+          </div>
         </div>
 
         <div className="lg:col-span-5 hidden lg:block animate-float-up" style={{ animationDelay: "0.2s" }}>
