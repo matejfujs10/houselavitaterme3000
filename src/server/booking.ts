@@ -18,7 +18,7 @@ const BookingSchema = z.object({
 
 const RESEND_GATEWAY = "https://connector-gateway.lovable.dev/resend";
 const NOTIFY_TO = "rent@lavitaterme3000.com";
-const NOTIFY_FROM = "Hiška LA VITA <onboarding@resend.dev>";
+const NOTIFY_FROM = "Hiška LA VITA <rent@lavitaterme3000.com>";
 
 function escapeHtml(s: string) {
   return s.replace(/[&<>"']/g, (c) =>
