@@ -123,6 +123,9 @@ const sl: Dict = {
     ctaBook: "REZERVIRAJ ZDAJ",
     urgent: "Majski in poletni termini se hitro polnijo! Rezervirajte zdaj po ugodnejši ceni.",
     discountBadge: "DO 30% CENEJE",
+    floatingBadge: "PROSTO: Zadnji termini za poletje 2026!",
+    quickFrom: "Že od",
+    quickNight: "/noč · vse vključeno",
   },
   value: {
     title: "Vse vključeno v ceno",
@@ -135,6 +138,15 @@ const sl: Dict = {
       { title: "Hiška 50 m² (2–6 oseb)", desc: "Dormeo ležišča, klima, polno opremljena kuhinja, TV." },
       { title: "Parkirišče tik ob hiški", desc: "Popolna zasebnost in mir v zelenem objemu." },
     ],
+    valueTitle: "Zakaj gostje izberejo Hiško La Vita?",
+    valueSubtitle: "Trije razlogi, zakaj boste rezervirali že nocoj.",
+    highlights: [
+      { tag: "BREZPLAČNO", title: "2× celodnevne karte za Terme 3000", desc: "Prihranek 40€+ dnevno — vključeno v ceno najema." },
+      { tag: "LUKSUZ", title: "Dormeo jogiji za spanec kot v oblakih", desc: "Anatomske vzmetnice premium kakovosti za vsako sobo." },
+      { tag: "ZASEBNOST", title: "2× lastna terasa brez sosedov", desc: "Popolna zasebnost v zelenem objemu — vaš mir, vaš ritem." },
+    ],
+    trustTitle: "Zakaj nam zaupati",
+    trust: ["Preverjen gostitelj", "Varna rezervacija", "iCal sinhronizirano (real-time)", "Odgovor v 24h"],
   },
   pricing: {
     title: "Transparentne cene",
@@ -153,6 +165,18 @@ const sl: Dict = {
     subtitle: "Resnične ocene s Facebooka.",
     verified: "Preverjen gost",
     viewAll: "Vse ocene na Facebooku",
+  },
+  faq: {
+    title: "Pogosta vprašanja",
+    subtitle: "Vse, kar morate vedeti pred rezervacijo.",
+    items: [
+      { q: "Kako poteka rezervacija?", a: "Izberete datume, izpolnite obrazec in v 24 urah vam potrdimo razpoložljivost ter pošljemo navodila za plačilo." },
+      { q: "Ali so kopalne karte res vključene?", a: "Da — 2× celodnevni karti za Terme 3000 sta vključeni v ceno za vsako rezervacijo, ne glede na število noči." },
+      { q: "Koliko gostov sprejme hiška?", a: "Hiška ima 50 m² in udobno sprejme od 2 do 6 oseb. Otroci do 5. leta so brezplačno." },
+      { q: "Kakšna je politika odpovedi?", a: "Brezplačna odpoved do 30 dni pred prihodom. Med 30 in 14 dnevi pred prihodom zadržimo 50% akontacije." },
+      { q: "So kolesa zares vključena?", a: "Da — 4× kolesa za odrasle in otroke so vam na voljo brezplačno, prav tako športni rekviziti." },
+      { q: "Ali je možen prihod s hišnim ljubljenčkom?", a: "Po dogovoru — kontaktirajte nas pred rezervacijo, da uskladimo podrobnosti." },
+    ],
   },
   booking: {
     title: "Rezervirajte svoj termin",
@@ -182,6 +206,9 @@ const sl: Dict = {
     invalidRange: "Izbrani datumi so že zasedeni.",
     nightLabel: "noč",
     nightsLabel: "noči",
+    originalPrice: "Redna cena",
+    youSave: "Prihranek",
+    bestValue: "NAJBOLJŠA VREDNOST",
   },
   footer: {
     tagline: "Premium počitniška hiška ob Termah 3000.",
