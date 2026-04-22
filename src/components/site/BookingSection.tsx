@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useI18n, calcStay } from "@/lib/i18n";
 import { AvailabilityCalendar } from "./AvailabilityCalendar";
-import { Loader2, CheckCircle2, Sparkles } from "lucide-react";
+import { Loader2, CheckCircle2, Sparkles, Heart, Trophy } from "lucide-react";
 import { createBooking } from "@/server/booking";
 import { cn } from "@/lib/utils";
 
@@ -130,27 +130,62 @@ export function BookingSection() {
                   </Field>
 
                   <label className="flex items-start gap-3 p-3 rounded-xl bg-gradient-warm border border-gold/30 cursor-pointer">
-                    <input type="checkbox" checked={pensioner} onChange={(e) => setPensioner(e.target.checked)} className="mt-0.5 accent-walnut w-4 h-4" />
-                    <div className="flex-1">
-                      <div className="text-sm font-semibold text-walnut flex items-center gap-1">
-                        <Sparkles className="w-3.5 h-3.5 text-gold-deep" />
-                        {t.booking.pensioner}
-                      </div>
-                      <div className="text-xs text-muted-foreground">{t.booking.pensionerHint}</div>
+                  <label
+                    className={cn(
+                      "flex items-center gap-3 p-4 rounded-2xl border-2 cursor-pointer transition-luxe",
+                      pensioner
+                        ? "bg-gradient-gold border-gold-deep shadow-gold"
+                        : "bg-gradient-warm border-gold/30 hover:border-gold/60",
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-luxe",
+                        pensioner ? "bg-walnut text-gold-bright" : "bg-walnut/10 text-walnut",
+                      )}
+                    >
+                      <Heart className="w-5 h-5" strokeWidth={2.4} />
                     </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-bold text-walnut-deep flex items-center gap-1.5">
+                        ★ Special Care
+                      </div>
+                      <div className="text-sm font-semibold text-walnut">{t.booking.pensioner}</div>
+                      <div className="text-xs text-walnut/75">{t.booking.pensionerHint}</div>
+                    </div>
+                    <input
+                      type="checkbox"
+                      checked={pensioner}
+                      onChange={(e) => setPensioner(e.target.checked)}
+                      className="accent-walnut w-5 h-5"
+                    />
                   </label>
 
                   {stay.nights > 0 && (
                     <div className="rounded-xl bg-walnut text-cream p-4 space-y-1.5 text-sm">
+                      {stay.nights >= 7 && (
+                        <div className="-mx-4 -mt-4 mb-2 px-4 py-2 bg-gradient-gold text-walnut-deep text-xs font-black tracking-widest text-center flex items-center justify-center gap-1.5 rounded-t-xl">
+                          <Trophy className="w-3.5 h-3.5" />
+                          {t.booking.bestValue}
+                        </div>
+                      )}
                       <Row label={t.booking.nights} value={`${stay.nights} ${stay.nights === 1 ? t.booking.nightLabel : t.booking.nightsLabel}`} />
                       <Row label={t.booking.pricePerNight} value={`${stay.avgRate}€`} />
                       {stay.discount > 0 && (
-                        <Row label={`${t.booking.discount} (−${stay.pct}%)`} value={`−${stay.discount}€`} accent />
+                        <>
+                          <Row label={t.booking.originalPrice} value={`${stay.base}€`} strike />
+                          <Row label={`${t.booking.discount} (−${stay.pct}%)`} value={`−${stay.discount}€`} accent />
+                        </>
                       )}
                       <div className="border-t border-cream/20 pt-2 mt-2 flex justify-between font-bold text-lg">
                         <span>{t.booking.total}</span>
                         <span className="text-gradient-gold">{stay.total}€</span>
                       </div>
+                      {stay.discount > 0 && (
+                        <div className="text-center text-[11px] uppercase tracking-widest text-success font-bold pt-1">
+                          ✓ {t.booking.youSave} {stay.discount}€
+                        </div>
+                      )}
                     </div>
                   )}
 
@@ -191,11 +226,19 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-function Row({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
+function Row({ label, value, accent, strike }: { label: string; value: string; accent?: boolean; strike?: boolean }) {
   return (
     <div className="flex justify-between">
-      <span className="text-cream/75">{label}</span>
-      <span className={cn(accent ? "text-gold-bright font-semibold" : "text-cream font-medium")}>{value}</span>
+      <span className={cn("text-cream/75", strike && "line-through opacity-60")}>{label}</span>
+      <span
+        className={cn(
+          accent && "text-gold-bright font-semibold",
+          strike && "line-through opacity-60 text-cream/70",
+          !accent && !strike && "text-cream font-medium",
+        )}
+      >
+        {value}
+      </span>
     </div>
   );
 }
