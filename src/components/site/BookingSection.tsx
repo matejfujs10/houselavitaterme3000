@@ -129,7 +129,6 @@ export function BookingSection() {
                     <textarea value={message} onChange={(e) => setMessage(e.target.value)} maxLength={2000} rows={2} className="w-full px-3 py-2 rounded-lg border border-input bg-background text-sm resize-none" />
                   </Field>
 
-                  <label className="flex items-start gap-3 p-3 rounded-xl bg-gradient-warm border border-gold/30 cursor-pointer">
                   <label
                     className={cn(
                       "flex items-center gap-3 p-4 rounded-2xl border-2 cursor-pointer transition-luxe",
