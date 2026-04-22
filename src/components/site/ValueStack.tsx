@@ -1,5 +1,5 @@
 import { useI18n } from "@/lib/i18n";
-import { Ticket, TicketPercent, Baby, Bike, Home, Car, Gift, BedDouble, Trees, ShieldCheck, RefreshCcw, Clock } from "lucide-react";
+import { Ticket, TicketPercent, Baby, Bike, Home, Car, Gift, BedDouble, Trees, ShieldCheck, RefreshCcw, Clock, MapPin, Tent } from "lucide-react";
 
 const ICONS = [Ticket, TicketPercent, Baby, Bike, Home, Car];
 const HIGHLIGHT_ICONS = [Gift, BedDouble, Trees];
@@ -11,6 +11,37 @@ export function ValueStack() {
   return (
     <section id="features" className="py-20 sm:py-28 bg-gradient-warm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Camp banner + distance pin */}
+        <div className="mb-14 grid md:grid-cols-5 gap-4">
+          <div className="md:col-span-3 relative overflow-hidden rounded-3xl bg-walnut text-cream p-6 sm:p-8 shadow-luxe border border-gold/30">
+            <div className="absolute -top-10 -right-10 w-48 h-48 bg-gradient-gold opacity-20 rounded-full blur-3xl" />
+            <div className="relative flex items-start gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-gold flex items-center justify-center shrink-0 shadow-gold">
+                <Tent className="w-7 h-7 text-walnut-deep" strokeWidth={2.2} />
+              </div>
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-gold-bright font-bold">★ Top destinacija</span>
+                <p className="font-display italic text-lg sm:text-2xl leading-snug mt-1.5 text-cream">
+                  {t.value.campBanner}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="md:col-span-2 relative overflow-hidden rounded-3xl bg-gradient-gold p-6 sm:p-8 shadow-gold border-2 border-gold-deep flex items-center">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-walnut text-gold-bright flex items-center justify-center shrink-0 animate-pulse-gold">
+                <MapPin className="w-7 h-7" strokeWidth={2.4} />
+              </div>
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-walnut-deep font-black">📍 Lokacija</span>
+                <p className="font-display text-base sm:text-lg font-bold text-walnut-deep leading-tight mt-1">
+                  {t.value.distancePin}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* High-impact value stack */}
         <div className="text-center mb-12">
           <span className="text-xs uppercase tracking-[0.3em] text-gold-deep font-semibold">
