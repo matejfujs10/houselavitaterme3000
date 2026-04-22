@@ -351,6 +351,7 @@ const de: Dict = {
     floatingBadge: "FREI: Letzte Termine Sommer 2026!",
     quickFrom: "Ab",
     quickNight: "/Nacht · alles inklusive",
+    distanceBadge: "50 m bis zu den Pools",
   },
   value: {
     title: "Alles inklusive",
@@ -372,6 +373,8 @@ const de: Dict = {
     ],
     trustTitle: "Warum uns vertrauen",
     trust: ["Verifizierter Gastgeber", "Sichere Buchung", "iCal synchronisiert (Echtzeit)", "Antwort in 24h"],
+    campBanner: "Erleben Sie Camping auf einem der beliebtesten Campingplätze Sloweniens",
+    distancePin: "Der Thermalkomplex ist nur 50 m vom Haus entfernt",
   },
   pricing: {
     title: "Transparente Preise",
