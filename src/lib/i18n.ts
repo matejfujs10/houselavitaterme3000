@@ -39,6 +39,7 @@ type Dict = {
     distanceBadge: string;
     promo3Title: string;
     promo3Desc: string;
+    ticketsBadge: string;
   };
   value: {
     title: string;
@@ -121,9 +122,9 @@ const sl: Dict = {
   nav: { features: "Ugodnosti", gallery: "Galerija", reviews: "Mnenja", book: "Rezerviraj", contact: "Kontakt" },
   hero: {
     badge: "Hiška LA VITA · Terme 3000 Moravske Toplice",
-    title1: "Družinski oddih ob",
-    title2: "Termah 3000",
-    subtitle: "Premium hiška za 2–6 oseb · 50 m² zasebnosti · vključene kopalne karte, kolesa in popolna sprostitev v srcu Prekmurja.",
+    title1: "Udobje hiške La Vita",
+    title2: "+ 2 kopalni karti GRATIS",
+    subtitle: "Le 50m od bazenov Term 3000. Vključeni 2 kopalni karti, brezplačna kolesa in le par korakov do vodne zabave. Rezervirajte svoj termin za poletje 2026 še danes!",
     ctaCheck: "PREVERI RAZPOLOŽLJIVOST",
     ctaBook: "REZERVIRAJ ZDAJ",
     urgent: "Majski in poletni termini se hitro polnijo! Rezervirajte zdaj po ugodnejši ceni.",
@@ -134,6 +135,7 @@ const sl: Dict = {
     distanceBadge: "50 m do bazenov",
     promo3Title: "🎁 3+ NOČITEV = DODATNA AKCIJA",
     promo3Desc: "Pri rezervaciji 3 ali več nočitev prejmete dodatni 5% popust + presenečenje dobrodošlice.",
+    ticketsBadge: "2× KOPALNI KARTI VKLJUČENI",
   },
   value: {
     title: "Vse vključeno v ceno",
@@ -221,7 +223,7 @@ const sl: Dict = {
     bestValue: "NAJBOLJŠA VREDNOST",
   },
   footer: {
-    tagline: "Premium počitniška hiška ob Termah 3000.",
+    tagline: "50m² Hiška v Kampu Terme 3000.",
     contact: "Kontakt",
     quickLinks: "Povezave",
     follow: "Sledite nam",
@@ -234,8 +236,8 @@ const en: Dict = {
   nav: { features: "Features", gallery: "Gallery", reviews: "Reviews", book: "Book Now", contact: "Contact" },
   hero: {
     badge: "House LA VITA · Terme 3000 Moravske Toplice",
-    title1: "A family escape at",
-    title2: "Terme 3000",
+    title1: "House La Vita comfort",
+    title2: "+ 2 FREE pool tickets",
     subtitle: "Premium 50 m² cabin for 2–6 guests · pool tickets, bikes and full comfort included — in the heart of Prekmurje, Slovenia.",
     ctaCheck: "CHECK AVAILABILITY",
     ctaBook: "BOOK NOW",
@@ -247,6 +249,7 @@ const en: Dict = {
     distanceBadge: "50 m to the pools",
     promo3Title: "🎁 3+ NIGHTS = BONUS DEAL",
     promo3Desc: "Book 3 or more nights and get an extra 5% off + a welcome surprise on arrival.",
+    ticketsBadge: "2× POOL TICKETS INCLUDED",
   },
   value: {
     title: "Everything included",
@@ -334,7 +337,7 @@ const en: Dict = {
     bestValue: "BEST VALUE",
   },
   footer: {
-    tagline: "Premium holiday house next to Terme 3000.",
+    tagline: "50m² cabin in Camp Terme 3000.",
     contact: "Contact",
     quickLinks: "Links",
     follow: "Follow us",
@@ -347,8 +350,8 @@ const de: Dict = {
   nav: { features: "Vorteile", gallery: "Galerie", reviews: "Bewertungen", book: "Buchen", contact: "Kontakt" },
   hero: {
     badge: "Haus LA VITA · Terme 3000 Moravske Toplice",
-    title1: "Familienurlaub an den",
-    title2: "Terme 3000",
+    title1: "Komfort des Hauses La Vita",
+    title2: "+ 2 GRATIS Thermenkarten",
     subtitle: "Premium 50 m² Haus für 2–6 Personen · inklusive Thermeneintritt, Fahrräder und vollem Komfort — im Herzen von Prekmurje.",
     ctaCheck: "VERFÜGBARKEIT PRÜFEN",
     ctaBook: "JETZT BUCHEN",
@@ -360,6 +363,7 @@ const de: Dict = {
     distanceBadge: "50 m bis zu den Pools",
     promo3Title: "🎁 3+ NÄCHTE = BONUS-AKTION",
     promo3Desc: "Bei 3 oder mehr Nächten zusätzliche 5% Rabatt + eine Willkommensüberraschung.",
+    ticketsBadge: "2× THERMENKARTEN INKLUSIVE",
   },
   value: {
     title: "Alles inklusive",
@@ -447,7 +451,7 @@ const de: Dict = {
     bestValue: "BESTER WERT",
   },
   footer: {
-    tagline: "Premium Ferienhaus an den Terme 3000.",
+    tagline: "50m² Hütte im Camp Terme 3000.",
     contact: "Kontakt",
     quickLinks: "Links",
     follow: "Folgen Sie uns",
@@ -460,8 +464,8 @@ const hr: Dict = {
   nav: { features: "Pogodnosti", gallery: "Galerija", reviews: "Recenzije", book: "Rezerviraj", contact: "Kontakt" },
   hero: {
     badge: "Kućica LA VITA · Terme 3000 Moravske Toplice",
-    title1: "Obiteljski odmor uz",
-    title2: "Terme 3000",
+    title1: "Udobnost kućice La Vita",
+    title2: "+ 2 GRATIS ulaznice za bazen",
     subtitle: "Premium kućica 50 m² za 2–6 osoba · uključene ulaznice za bazen, bicikli i potpuna udobnost — u srcu Prekmurja.",
     ctaCheck: "PROVJERI DOSTUPNOST",
     ctaBook: "REZERVIRAJ ODMAH",
@@ -473,6 +477,7 @@ const hr: Dict = {
     distanceBadge: "50 m do bazena",
     promo3Title: "🎁 3+ NOĆI = DODATNA AKCIJA",
     promo3Desc: "Uz rezervaciju 3 ili više noći ostvarite dodatnih 5% popusta + dobrodošlicu na poklon.",
+    ticketsBadge: "2× ULAZNICE ZA BAZEN UKLJUČENE",
   },
   value: {
     title: "Sve uključeno u cijenu",
@@ -560,7 +565,7 @@ const hr: Dict = {
     bestValue: "NAJBOLJA VRIJEDNOST",
   },
   footer: {
-    tagline: "Premium kućica za odmor uz Terme 3000.",
+    tagline: "Kućica 50m² u Kampu Terme 3000.",
     contact: "Kontakt",
     quickLinks: "Linkovi",
     follow: "Pratite nas",
