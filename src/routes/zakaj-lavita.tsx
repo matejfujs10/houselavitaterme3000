@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { UrgencyBar } from "@/components/site/UrgencyBar";
+import { MobileBookCTA } from "@/components/site/MobileBookCTA";
 import { useI18n } from "@/lib/i18n";
 import {
   Tent, Home, Coffee, Trees, Waves, Bike, Bed, Tv, Wifi, Wind, Utensils, Music,
@@ -258,6 +259,7 @@ function WhyPage() {
       </section>
 
       <Footer />
+      <MobileBookCTA />
     </div>
   );
 }
