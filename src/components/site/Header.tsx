@@ -34,7 +34,7 @@ export function Header() {
           className="flex items-center gap-2 group"
         >
           <span className="font-display text-xl sm:text-2xl tracking-tight text-walnut">
-            LA <span className="text-gradient-gold font-bold">VITA</span>
+            HOUSE <span className="text-gradient-gold font-bold">LAVITA</span>
           </span>
         </button>
 
