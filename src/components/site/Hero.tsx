@@ -1,5 +1,6 @@
 import { useI18n } from "@/lib/i18n";
 import heroImg from "@/assets/exterior-house.png";
+import heroHouse from "@/assets/hero-house-main.png";
 import slide1 from "@/assets/hero-slide-1.jpg";
 import slide2 from "@/assets/hero-slide-2.jpg";
 import slide3 from "@/assets/hero-slide-3.jpg";
@@ -9,9 +10,9 @@ import slide6 from "@/assets/hero-slide-6.jpg";
 import slide7 from "@/assets/hero-slide-7.jpg";
 import slide8 from "@/assets/hero-slide-8.jpg";
 import { useEffect, useState } from "react";
-import { ShieldCheck, Sparkles, Calendar, MapPin, Gift } from "lucide-react";
+import { ShieldCheck, Sparkles, Calendar, MapPin, Gift, Ticket } from "lucide-react";
 
-const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
+const slides = [heroHouse, slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 
 export function Hero() {
   const { t } = useI18n();
