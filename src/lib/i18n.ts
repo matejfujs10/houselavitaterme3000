@@ -37,6 +37,8 @@ type Dict = {
     quickFrom: string;
     quickNight: string;
     distanceBadge: string;
+    promo3Title: string;
+    promo3Desc: string;
   };
   value: {
     title: string;
