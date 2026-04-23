@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ZakajLavitaRouteImport } from './routes/zakaj-lavita'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ZakajLavitaRoute = ZakajLavitaRouteImport.update({
+  id: '/zakaj-lavita',
+  path: '/zakaj-lavita',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/zakaj-lavita': typeof ZakajLavitaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/zakaj-lavita': typeof ZakajLavitaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/zakaj-lavita': typeof ZakajLavitaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/zakaj-lavita'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/zakaj-lavita'
+  id: '__root__' | '/' | '/zakaj-lavita'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ZakajLavitaRoute: typeof ZakajLavitaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/zakaj-lavita': {
+      id: '/zakaj-lavita'
+      path: '/zakaj-lavita'
+      fullPath: '/zakaj-lavita'
+      preLoaderRoute: typeof ZakajLavitaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ZakajLavitaRoute: ZakajLavitaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

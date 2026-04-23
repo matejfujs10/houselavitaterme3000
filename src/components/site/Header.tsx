@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { LANGS, LANG_LABELS, type Lang } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -23,17 +24,14 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-luxe",
+        "sticky top-0 inset-x-0 z-50 transition-luxe",
         scrolled
           ? "bg-cream/95 backdrop-blur-md shadow-card"
           : "bg-transparent",
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
-        <button
-          onClick={() => scrollTo("hero")}
-          className="flex items-center gap-2 group"
-        >
+        <Link to="/" className="flex items-center gap-2 group">
           <img
             src={logo}
             alt="House Lavita logo"
@@ -42,9 +40,12 @@ export function Header() {
           <span className="font-display text-xl sm:text-2xl tracking-tight text-walnut">
             HOUSE <span className="text-gradient-gold font-bold">LAVITA</span>
           </span>
-        </button>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-walnut">
+          <Link to="/zakaj-lavita" className="hover:text-gold-deep transition-luxe font-bold text-gold-deep">
+            ★ {t.nav.why}
+          </Link>
           <button onClick={() => scrollTo("features")} className="hover:text-gold-deep transition-luxe">
             {t.nav.features}
           </button>

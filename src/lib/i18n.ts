@@ -23,7 +23,9 @@ export function detectLang(): Lang {
 }
 
 type Dict = {
-  nav: { features: string; gallery: string; reviews: string; book: string; contact: string };
+  nav: { features: string; gallery: string; reviews: string; book: string; contact: string; why: string };
+  urgencyBar: string;
+  whyCta: string;
   hero: {
     badge: string;
     title1: string;
@@ -119,7 +121,9 @@ type Dict = {
 };
 
 const sl: Dict = {
-  nav: { features: "Ugodnosti", gallery: "Galerija", reviews: "Mnenja", book: "Rezerviraj", contact: "Kontakt" },
+  nav: { features: "Ugodnosti", gallery: "Galerija", reviews: "Mnenja", book: "Rezerviraj", contact: "Kontakt", why: "Zakaj LaVita?" },
+  urgencyBar: "Zadnja priložnost za rezervacijo po akcijskih cenah 2026!",
+  whyCta: "HOČEM DOPUST!",
   hero: {
     badge: "Hiška LA VITA · Terme 3000 Moravske Toplice",
     title1: "Udobje hiške La Vita",
@@ -233,7 +237,9 @@ const sl: Dict = {
 };
 
 const en: Dict = {
-  nav: { features: "Features", gallery: "Gallery", reviews: "Reviews", book: "Book Now", contact: "Contact" },
+  nav: { features: "Features", gallery: "Gallery", reviews: "Reviews", book: "Book Now", contact: "Contact", why: "Why LaVita?" },
+  urgencyBar: "Last chance to book at 2026 special prices!",
+  whyCta: "I WANT THIS HOLIDAY!",
   hero: {
     badge: "House LA VITA · Terme 3000 Moravske Toplice",
     title1: "House La Vita comfort",
@@ -347,7 +353,9 @@ const en: Dict = {
 };
 
 const de: Dict = {
-  nav: { features: "Vorteile", gallery: "Galerie", reviews: "Bewertungen", book: "Buchen", contact: "Kontakt" },
+  nav: { features: "Vorteile", gallery: "Galerie", reviews: "Bewertungen", book: "Buchen", contact: "Kontakt", why: "Warum LaVita?" },
+  urgencyBar: "Letzte Chance — Aktionspreise 2026 sichern!",
+  whyCta: "ICH WILL URLAUB!",
   hero: {
     badge: "Haus LA VITA · Terme 3000 Moravske Toplice",
     title1: "Komfort des Hauses La Vita",
@@ -461,7 +469,9 @@ const de: Dict = {
 };
 
 const hr: Dict = {
-  nav: { features: "Pogodnosti", gallery: "Galerija", reviews: "Recenzije", book: "Rezerviraj", contact: "Kontakt" },
+  nav: { features: "Pogodnosti", gallery: "Galerija", reviews: "Recenzije", book: "Rezerviraj", contact: "Kontakt", why: "Zašto LaVita?" },
+  urgencyBar: "Posljednja prilika za rezervaciju po akcijskim cijenama 2026!",
+  whyCta: "ŽELIM ODMOR!",
   hero: {
     badge: "Kućica LA VITA · Terme 3000 Moravske Toplice",
     title1: "Udobnost kućice La Vita",
