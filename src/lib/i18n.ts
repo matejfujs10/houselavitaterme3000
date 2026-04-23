@@ -37,6 +37,8 @@ type Dict = {
     quickFrom: string;
     quickNight: string;
     distanceBadge: string;
+    promo3Title: string;
+    promo3Desc: string;
   };
   value: {
     title: string;
@@ -130,6 +132,8 @@ const sl: Dict = {
     quickFrom: "Že od",
     quickNight: "/noč · vse vključeno",
     distanceBadge: "50 m do bazenov",
+    promo3Title: "🎁 3+ NOČITEV = DODATNA AKCIJA",
+    promo3Desc: "Pri rezervaciji 3 ali več nočitev prejmete dodatni 5% popust + presenečenje dobrodošlice.",
   },
   value: {
     title: "Vse vključeno v ceno",
@@ -241,6 +245,8 @@ const en: Dict = {
     quickFrom: "From",
     quickNight: "/night · all included",
     distanceBadge: "50 m to the pools",
+    promo3Title: "🎁 3+ NIGHTS = BONUS DEAL",
+    promo3Desc: "Book 3 or more nights and get an extra 5% off + a welcome surprise on arrival.",
   },
   value: {
     title: "Everything included",
@@ -352,6 +358,8 @@ const de: Dict = {
     quickFrom: "Ab",
     quickNight: "/Nacht · alles inklusive",
     distanceBadge: "50 m bis zu den Pools",
+    promo3Title: "🎁 3+ NÄCHTE = BONUS-AKTION",
+    promo3Desc: "Bei 3 oder mehr Nächten zusätzliche 5% Rabatt + eine Willkommensüberraschung.",
   },
   value: {
     title: "Alles inklusive",
@@ -463,6 +471,8 @@ const hr: Dict = {
     quickFrom: "Već od",
     quickNight: "/noć · sve uključeno",
     distanceBadge: "50 m do bazena",
+    promo3Title: "🎁 3+ NOĆI = DODATNA AKCIJA",
+    promo3Desc: "Uz rezervaciju 3 ili više noći ostvarite dodatnih 5% popusta + dobrodošlicu na poklon.",
   },
   value: {
     title: "Sve uključeno u cijenu",

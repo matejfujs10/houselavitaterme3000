@@ -9,7 +9,7 @@ import slide6 from "@/assets/hero-slide-6.jpg";
 import slide7 from "@/assets/hero-slide-7.jpg";
 import slide8 from "@/assets/hero-slide-8.jpg";
 import { useEffect, useState } from "react";
-import { ShieldCheck, Sparkles, Calendar, MapPin } from "lucide-react";
+import { ShieldCheck, Sparkles, Calendar, MapPin, Gift } from "lucide-react";
 
 const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 
@@ -96,6 +96,23 @@ export function Hero() {
           <div className="mt-4 inline-flex items-center gap-2 bg-gradient-gold text-walnut-deep rounded-full px-4 py-2 text-xs sm:text-sm font-bold shadow-gold sm:ml-3">
             <MapPin className="w-4 h-4" strokeWidth={2.5} />
             {t.hero.distanceBadge}
+          </div>
+
+          <div className="mt-6 relative max-w-md rounded-2xl border-2 border-gold-bright/60 bg-walnut-deep/70 backdrop-blur-md p-4 shadow-luxe overflow-hidden">
+            <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-gradient-gold opacity-25 blur-2xl" />
+            <div className="relative flex items-start gap-3">
+              <div className="w-11 h-11 rounded-xl bg-gradient-gold flex items-center justify-center shrink-0 shadow-gold animate-pulse-gold">
+                <Gift className="w-5 h-5 text-walnut-deep" strokeWidth={2.4} />
+              </div>
+              <div>
+                <div className="text-gold-bright font-black text-sm sm:text-base tracking-wide">
+                  {t.hero.promo3Title}
+                </div>
+                <p className="text-cream/85 text-xs sm:text-sm mt-1 leading-snug">
+                  {t.hero.promo3Desc}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

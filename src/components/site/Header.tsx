@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { LANGS, LANG_LABELS, type Lang } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo-lavita.png";
 
 export function Header() {
   const { t, lang, setLang } = useI18n();
@@ -33,6 +34,11 @@ export function Header() {
           onClick={() => scrollTo("hero")}
           className="flex items-center gap-2 group"
         >
+          <img
+            src={logo}
+            alt="House Lavita logo"
+            className="h-9 sm:h-11 w-auto object-contain mix-blend-multiply"
+          />
           <span className="font-display text-xl sm:text-2xl tracking-tight text-walnut">
             HOUSE <span className="text-gradient-gold font-bold">LAVITA</span>
           </span>
