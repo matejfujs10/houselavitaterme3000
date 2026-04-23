@@ -1,5 +1,6 @@
 import { useI18n } from "@/lib/i18n";
 import { Phone, Mail, MapPin, Facebook } from "lucide-react";
+import logo from "@/assets/logo-lavita.png";
 
 export function Footer() {
   const { t } = useI18n();
@@ -8,8 +9,18 @@ export function Footer() {
     <footer id="contact" className="bg-walnut-deep text-cream pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-10">
         <div>
-          <div className="font-display text-2xl mb-3">
-            HOUSE <span className="text-gradient-gold font-bold">LAVITA</span>
+          <div className="flex items-center gap-3 mb-3">
+            <img
+              src={logo}
+              alt="House Lavita logo"
+              className="h-12 w-auto object-contain mix-blend-screen"
+            />
+            <div className="font-display text-2xl">
+              HOUSE <span className="text-gradient-gold font-bold">LAVITA</span>
+            </div>
+          </div>
+          <div className="text-gold-bright font-display italic tracking-[0.2em] text-sm mb-3 uppercase">
+            Enjoy · Relax · Refresh
           </div>
           <p className="text-cream/70 text-sm leading-relaxed">{t.footer.tagline}</p>
         </div>
