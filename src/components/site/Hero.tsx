@@ -1,18 +1,33 @@
 import { useI18n } from "@/lib/i18n";
 import heroImg from "@/assets/exterior-house.png";
-import termeImg from "@/assets/terme-3000-pools.jpg";
+import slide1 from "@/assets/hero-slide-1.jpg";
+import slide2 from "@/assets/hero-slide-2.jpg";
+import slide3 from "@/assets/hero-slide-3.jpg";
+import slide4 from "@/assets/hero-slide-4.jpg";
+import slide5 from "@/assets/hero-slide-5.jpg";
+import slide6 from "@/assets/hero-slide-6.jpg";
+import slide7 from "@/assets/hero-slide-7.jpg";
+import slide8 from "@/assets/hero-slide-8.jpg";
 import { useEffect, useState } from "react";
 import { ShieldCheck, Sparkles, Calendar, MapPin } from "lucide-react";
+
+const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 
 export function Hero() {
   const { t } = useI18n();
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   const [scrollY, setScrollY] = useState(0);
+  const [slideIdx, setSlideIdx] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => setSlideIdx((i) => (i + 1) % slides.length), 3500);
+    return () => clearInterval(id);
   }, []);
 
   return (
@@ -28,15 +43,30 @@ export function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid lg:grid-cols-12 gap-10 items-center w-full">
-        <div className="lg:col-span-7 text-cream animate-float-up">
-          <span className="inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.2em] text-gold-bright/90 mb-5">
-            <span className="h-px w-8 bg-gold-bright/70" />
-            {t.hero.badge}
+        <div className="lg:col-span-7 text-cream animate-float-up relative">
+          {/* Creative colorful blobs */}
+          <div className="pointer-events-none absolute -top-10 -left-10 w-72 h-72 rounded-full blur-3xl opacity-40 animate-pulse-gold"
+               style={{ background: "radial-gradient(circle, oklch(0.78 0.18 320) 0%, transparent 70%)" }} />
+          <div className="pointer-events-none absolute top-40 left-20 w-80 h-80 rounded-full blur-3xl opacity-30"
+               style={{ background: "radial-gradient(circle, oklch(0.75 0.2 200) 0%, transparent 70%)" }} />
+
+          <span className="relative inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.25em] font-bold mb-5 px-4 py-2 rounded-full backdrop-blur-md border border-gold-bright/40"
+                style={{ background: "linear-gradient(135deg, oklch(0.78 0.18 320 / 0.25), oklch(0.78 0.13 78 / 0.25))" }}>
+            <Sparkles className="w-3.5 h-3.5 text-gold-bright" />
+            <span className="text-gradient-gold">{t.hero.badge}</span>
           </span>
 
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
-            {t.hero.title1}{" "}
-            <span className="text-gradient-gold italic">{t.hero.title2}</span>
+          <h1 className="relative font-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
+            <span className="block">{t.hero.title1}</span>
+            <span className="block italic mt-1"
+                  style={{
+                    background: "linear-gradient(120deg, oklch(0.86 0.14 88) 0%, oklch(0.78 0.2 320) 50%, oklch(0.75 0.2 200) 100%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}>
+              {t.hero.title2}
+            </span>
           </h1>
 
           <p className="text-base sm:text-lg text-cream/85 max-w-xl mb-8 leading-relaxed">
@@ -90,7 +120,27 @@ export function Hero() {
                 WebkitBackdropFilter: "blur(20px)",
               }}
             >
-              <img src={termeImg} alt="Terme 3000" className="w-full h-[300px] object-cover" />
+              <div className="relative w-full h-[300px] overflow-hidden">
+                {slides.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`Hiška LA VITA ${i + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                    style={{ opacity: i === slideIdx ? 1 : 0 }}
+                  />
+                ))}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                  {slides.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setSlideIdx(i)}
+                      aria-label={`Slide ${i + 1}`}
+                      className={`h-1.5 rounded-full transition-all ${i === slideIdx ? "w-6 bg-gold-bright" : "w-1.5 bg-cream/60"}`}
+                    />
+                  ))}
+                </div>
+              </div>
               <div className="p-6 text-cream">
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-xs uppercase tracking-wider text-cream/70">{t.hero.quickFrom}</span>

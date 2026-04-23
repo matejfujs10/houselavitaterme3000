@@ -9,7 +9,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-10">
         <div>
           <div className="font-display text-2xl mb-3">
-            LA <span className="text-gradient-gold font-bold">VITA</span>
+            HOUSE <span className="text-gradient-gold font-bold">LAVITA</span>
           </div>
           <p className="text-cream/70 text-sm leading-relaxed">{t.footer.tagline}</p>
         </div>
