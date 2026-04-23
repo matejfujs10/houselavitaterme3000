@@ -1,18 +1,33 @@
 import { useI18n } from "@/lib/i18n";
 import heroImg from "@/assets/exterior-house.png";
-import termeImg from "@/assets/terme-3000-pools.jpg";
+import slide1 from "@/assets/hero-slide-1.jpg";
+import slide2 from "@/assets/hero-slide-2.jpg";
+import slide3 from "@/assets/hero-slide-3.jpg";
+import slide4 from "@/assets/hero-slide-4.jpg";
+import slide5 from "@/assets/hero-slide-5.jpg";
+import slide6 from "@/assets/hero-slide-6.jpg";
+import slide7 from "@/assets/hero-slide-7.jpg";
+import slide8 from "@/assets/hero-slide-8.jpg";
 import { useEffect, useState } from "react";
 import { ShieldCheck, Sparkles, Calendar, MapPin } from "lucide-react";
+
+const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 
 export function Hero() {
   const { t } = useI18n();
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   const [scrollY, setScrollY] = useState(0);
+  const [slideIdx, setSlideIdx] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => setSlideIdx((i) => (i + 1) % slides.length), 3500);
+    return () => clearInterval(id);
   }, []);
 
   return (
