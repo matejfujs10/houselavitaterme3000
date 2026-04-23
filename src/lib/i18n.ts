@@ -123,7 +123,7 @@ const sl: Dict = {
     badge: "Hiška LA VITA · Terme 3000 Moravske Toplice",
     title1: "Družinski oddih ob",
     title2: "Termah 3000",
-    subtitle: "Premium hiška za 2–6 oseb · 50 m² zasebnosti · vključene kopalne karte, kolesa in popolna sprostitev v srcu Prekmurja.",
+    subtitle: "Le 50m od bazenov Term 3000. Vključeni 2 kopalni karti, brezplačna kolesa in le par korakov do vodne zabave. Rezervirajte svoj termin za poletje 2026 še danes!",
     ctaCheck: "PREVERI RAZPOLOŽLJIVOST",
     ctaBook: "REZERVIRAJ ZDAJ",
     urgent: "Majski in poletni termini se hitro polnijo! Rezervirajte zdaj po ugodnejši ceni.",
@@ -221,7 +221,7 @@ const sl: Dict = {
     bestValue: "NAJBOLJŠA VREDNOST",
   },
   footer: {
-    tagline: "Premium počitniška hiška ob Termah 3000.",
+    tagline: "50m² Hiška v Kampu Terme 3000.",
     contact: "Kontakt",
     quickLinks: "Povezave",
     follow: "Sledite nam",
