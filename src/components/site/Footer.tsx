@@ -1,5 +1,5 @@
 import { useI18n } from "@/lib/i18n";
-import { Phone, Mail, MapPin, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 import logo from "@/assets/logo-lavita.png";
 
 export function Footer() {
@@ -44,14 +44,24 @@ export function Footer() {
         </div>
         <div>
           <h4 className="font-display text-lg mb-4 text-gold-bright">{t.footer.follow}</h4>
-          <a
-            href="https://www.facebook.com/hiskalavitaterme3000/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-cream/10 hover:bg-cream/20 transition-luxe px-4 py-2 rounded-full text-sm"
-          >
-            <Facebook className="w-4 h-4" /> Facebook
-          </a>
+          <div className="flex flex-wrap gap-2">
+            <a
+              href="https://www.facebook.com/hiskalavitaterme3000/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-cream/10 hover:bg-cream/20 transition-luxe px-4 py-2 rounded-full text-sm"
+            >
+              <Facebook className="w-4 h-4" /> Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/lavitaterme3000/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gradient-to-tr from-pink-500/30 via-fuchsia-500/30 to-amber-400/30 hover:from-pink-500/50 hover:via-fuchsia-500/50 hover:to-amber-400/50 transition-luxe px-4 py-2 rounded-full text-sm"
+            >
+              <Instagram className="w-4 h-4" /> Instagram
+            </a>
+          </div>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-12 pt-6 border-t border-cream/10 text-xs text-cream/50 flex flex-col sm:flex-row justify-between gap-2">
