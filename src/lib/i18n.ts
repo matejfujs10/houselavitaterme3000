@@ -23,7 +23,9 @@ export function detectLang(): Lang {
 }
 
 type Dict = {
-  nav: { features: string; gallery: string; reviews: string; book: string; contact: string };
+  nav: { features: string; gallery: string; reviews: string; book: string; contact: string; why: string };
+  urgencyBar: string;
+  whyCta: string;
   hero: {
     badge: string;
     title1: string;
