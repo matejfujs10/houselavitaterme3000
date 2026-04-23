@@ -43,7 +43,7 @@ export function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid lg:grid-cols-12 gap-10 items-center w-full">
-        <div className="lg:col-span-7 text-cream animate-float-up">
+        <div className="lg:col-span-7 text-cream animate-float-up relative">
           {/* Creative colorful blobs */}
           <div className="pointer-events-none absolute -top-10 -left-10 w-72 h-72 rounded-full blur-3xl opacity-40 animate-pulse-gold"
                style={{ background: "radial-gradient(circle, oklch(0.78 0.18 320) 0%, transparent 70%)" }} />
