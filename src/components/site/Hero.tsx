@@ -36,7 +36,9 @@ export function Hero() {
       <div className="absolute inset-0 -z-10">
         <img
           src={heroImg}
-          alt="House LA VITA"
+          alt="House La Vita — zunanjost počitniške hiške ob Termah 3000 Moravske Toplice"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover will-change-transform"
           style={{ transform: `translate3d(0, ${scrollY * 0.25}px, 0) scale(1.08)` }}
         />
@@ -58,7 +60,10 @@ export function Hero() {
               <img
                 key={i}
                 src={src}
-                alt={`Hiška LA VITA ${i + 1}`}
+                alt={`House La Vita — fotografija počitniške hiške ${i + 1} (Terme 3000 Moravske Toplice)`}
+                loading={i === 0 ? "eager" : "lazy"}
+                fetchPriority={i === 0 ? "high" : "auto"}
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
                 style={{ opacity: i === slideIdx ? 1 : 0 }}
               />
