@@ -9,14 +9,14 @@ import kitchen from "@/assets/kitchen.jpg";
 import exterior from "@/assets/exterior-house.png";
 
 const items = [
-  { src: exterior, alt: "Exterior", className: "row-span-2" },
-  { src: livingKitchen, alt: "Living and kitchen" },
-  { src: terrace1, alt: "Covered terrace" },
-  { src: bedroom1, alt: "Bedroom 1", className: "row-span-2" },
-  { src: kitchen, alt: "Kitchen detail" },
-  { src: terrace2, alt: "Side terrace with bike" },
-  { src: bedroom2, alt: "Bedroom 2" },
-  { src: family, alt: "Family game night" },
+  { src: exterior, alt: "House La Vita — zunanjost hiške v Kampu Terme 3000 Moravske Toplice", className: "row-span-2" },
+  { src: livingKitchen, alt: "Notranjost hiške La Vita — dnevna soba in kuhinja" },
+  { src: terrace1, alt: "House La Vita pokrita terasa s sedežno garnituro" },
+  { src: bedroom1, alt: "Spalnica v hiški La Vita s premium Dormeo jogiji", className: "row-span-2" },
+  { src: kitchen, alt: "Polno opremljena kuhinja v hiški La Vita" },
+  { src: terrace2, alt: "Stranska terasa hiške La Vita s kolesom" },
+  { src: bedroom2, alt: "Druga spalnica v hiški La Vita" },
+  { src: family, alt: "Družinski večer v hiški La Vita ob Termah 3000" },
 ];
 
 export function Gallery() {
