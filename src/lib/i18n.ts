@@ -15,10 +15,45 @@ export function detectLang(): Lang {
   if (typeof window === "undefined") return "sl";
   const stored = window.localStorage.getItem("lang") as Lang | null;
   if (stored && LANGS.includes(stored)) return stored;
-  const nav = (navigator.language || "en").toLowerCase();
-  if (nav.startsWith("sl")) return "sl";
-  if (nav.startsWith("de") || nav.startsWith("at") || nav.startsWith("ch")) return "de";
-  if (nav.startsWith("hr") || nav.startsWith("sr") || nav.startsWith("bs")) return "hr";
+
+  // 1) Timezone-based geo detection (reflects actual visitor location, not just browser UI language)
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    // Slovenia
+    if (tz === "Europe/Ljubljana") return "sl";
+    // German-speaking: Germany, Austria, Switzerland, Liechtenstein, Luxembourg
+    if (
+      tz === "Europe/Berlin" ||
+      tz === "Europe/Vienna" ||
+      tz === "Europe/Zurich" ||
+      tz === "Europe/Vaduz" ||
+      tz === "Europe/Luxembourg" ||
+      tz === "Europe/Busingen"
+    )
+      return "de";
+    // Croatian / ex-YU region
+    if (
+      tz === "Europe/Zagreb" ||
+      tz === "Europe/Belgrade" ||
+      tz === "Europe/Sarajevo" ||
+      tz === "Europe/Podgorica" ||
+      tz === "Europe/Skopje"
+    )
+      return "hr";
+  } catch {
+    /* timezone API not available — fall through */
+  }
+
+  // 2) Fallback to browser language(s)
+  const langs = ((navigator.languages && navigator.languages.length
+    ? navigator.languages
+    : [navigator.language || "en"]) as string[]).map((l) => l.toLowerCase());
+  for (const nav of langs) {
+    if (nav.startsWith("sl")) return "sl";
+    if (nav.startsWith("de") || nav.includes("-at") || nav.includes("-ch") || nav.includes("-li")) return "de";
+    if (nav.startsWith("hr") || nav.startsWith("sr") || nav.startsWith("bs") || nav.startsWith("me")) return "hr";
+    if (nav.startsWith("en")) return "en";
+  }
   return "en";
 }
 
