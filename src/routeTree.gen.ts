@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ZakajLavitaRouteImport } from './routes/zakaj-lavita'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ZakajLavitaRoute = ZakajLavitaRouteImport.update({
   id: '/zakaj-lavita',
   path: '/zakaj-lavita',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/zakaj-lavita': typeof ZakajLavitaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/zakaj-lavita': typeof ZakajLavitaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/zakaj-lavita': typeof ZakajLavitaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/zakaj-lavita'
+  fullPaths: '/' | '/sitemap.xml' | '/zakaj-lavita'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/zakaj-lavita'
-  id: '__root__' | '/' | '/zakaj-lavita'
+  to: '/' | '/sitemap.xml' | '/zakaj-lavita'
+  id: '__root__' | '/' | '/sitemap.xml' | '/zakaj-lavita'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ZakajLavitaRoute: typeof ZakajLavitaRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/zakaj-lavita'
       fullPath: '/zakaj-lavita'
       preLoaderRoute: typeof ZakajLavitaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ZakajLavitaRoute: ZakajLavitaRoute,
 }
 export const routeTree = rootRouteImport
