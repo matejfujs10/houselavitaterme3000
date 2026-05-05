@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import { calcStay as serverCalcStay } from "@/lib/i18n";
 
 const BookingSchema = z.object({
   checkIn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
@@ -10,8 +11,6 @@ const BookingSchema = z.object({
   guestEmail: z.string().trim().email().max(255),
   guestPhone: z.string().trim().min(5).max(40),
   isPensioner: z.boolean(),
-  totalPrice: z.number().min(0).max(100000),
-  nights: z.number().int().min(1).max(365),
   message: z.string().trim().max(2000).optional(),
   language: z.string().trim().max(8).optional(),
 });
@@ -26,7 +25,9 @@ function escapeHtml(s: string) {
   );
 }
 
-async function sendBookingEmails(data: z.infer<typeof BookingSchema>) {
+type BookingEmailData = z.infer<typeof BookingSchema> & { totalPrice: number; nights: number };
+
+async function sendBookingEmails(data: BookingEmailData) {
   const lovableKey = process.env.LOVABLE_API_KEY;
   const resendKey = process.env.RESEND_API_KEY;
   if (!lovableKey || !resendKey) {
@@ -96,6 +97,16 @@ async function sendBookingEmails(data: z.infer<typeof BookingSchema>) {
 export const createBooking = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => BookingSchema.parse(input))
   .handler(async ({ data }) => {
+    // Recompute price server-side - never trust client
+    const checkInDate = new Date(`${data.checkIn}T00:00:00Z`);
+    const checkOutDate = new Date(`${data.checkOut}T00:00:00Z`);
+    const stay = serverCalcStay(checkInDate, checkOutDate, data.isPensioner);
+    if (!stay.nights || stay.nights < 1 || stay.nights > 365) {
+      return { ok: false, error: "Invalid date range" };
+    }
+    const totalPrice = stay.total;
+    const nights = stay.nights;
+    const fullData = { ...data, totalPrice, nights };
     const { error } = await supabaseAdmin.from("bookings").insert({
       check_in: data.checkIn,
       check_out: data.checkOut,
@@ -104,15 +115,16 @@ export const createBooking = createServerFn({ method: "POST" })
       guest_email: data.guestEmail,
       guest_phone: data.guestPhone,
       is_pensioner: data.isPensioner,
-      total_price: data.totalPrice,
-      nights: data.nights,
+      total_price: totalPrice,
+      nights: nights,
       message: data.message ?? null,
       language: data.language ?? null,
+      status: "pending",
     });
     if (error) {
       console.error("Booking insert failed:", error);
       return { ok: false, error: "Could not save booking" };
     }
-    await sendBookingEmails(data);
+    await sendBookingEmails(fullData);
     return { ok: true, error: null };
   });

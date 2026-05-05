@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 
 const ICAL_URL =
+  process.env.BOOKING_ICAL_URL ||
   "https://ical.booking.com/v1/export?t=2d947bac-8178-46ef-952f-e5015f212b00";
 
 function parseICalDate(value: string): Date | null {
