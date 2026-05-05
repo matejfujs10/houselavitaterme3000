@@ -25,7 +25,9 @@ function escapeHtml(s: string) {
   );
 }
 
-async function sendBookingEmails(data: z.infer<typeof BookingSchema>) {
+type BookingEmailData = z.infer<typeof BookingSchema> & { totalPrice: number; nights: number };
+
+async function sendBookingEmails(data: BookingEmailData) {
   const lovableKey = process.env.LOVABLE_API_KEY;
   const resendKey = process.env.RESEND_API_KEY;
   if (!lovableKey || !resendKey) {
