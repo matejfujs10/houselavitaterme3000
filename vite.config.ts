@@ -1,0 +1,40 @@
+import { defineConfig } from "vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import viteReact from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import tsConfigPaths from "vite-tsconfig-paths";
+import path from "node:path";
+
+export default defineConfig({
+  server: { host: "::", port: 8080 },
+  environments: {
+    ssr: {
+      build: {
+        rollupOptions: {
+          input: { index: "virtual:tanstack-start-server-entry" },
+          output: {
+            entryFileNames: "[name].mjs",
+            chunkFileNames: "chunks/[name]-[hash].mjs",
+          },
+        },
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(process.cwd(), "src"),
+    },
+    dedupe: [
+      "react",
+      "react-dom",
+      "react/jsx-runtime",
+      "react/jsx-dev-runtime",
+    ],
+  },
+  plugins: [
+    tailwindcss(),
+    tsConfigPaths({ projects: ["./tsconfig.json"] }),
+    tanstackStart(),
+    viteReact(),
+  ],
+});
