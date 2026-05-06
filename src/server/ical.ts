@@ -13,6 +13,11 @@ export type BookedRange = { start: string; end: string };
 export const getBookedRanges = createServerFn({ method: "GET" }).handler(
   async (): Promise<{ ranges: BookedRange[]; error: string | null }> => {
     try {
+      const ICAL_URL = process.env.BOOKING_ICAL_URL;
+      if (!ICAL_URL) {
+        console.error("BOOKING_ICAL_URL env var is not set");
+        return { ranges: [], error: "iCal not configured" };
+      }
       const res = await fetch(ICAL_URL, {
         headers: { "User-Agent": "LavitaBookingSync/1.0" },
       });
