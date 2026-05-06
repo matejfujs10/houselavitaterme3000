@@ -7,6 +7,19 @@ import path from "node:path";
 
 export default defineConfig({
   server: { host: "::", port: 8080 },
+  environments: {
+    ssr: {
+      build: {
+        rollupOptions: {
+          input: { index: "virtual:tanstack-start-server-entry" },
+          output: {
+            entryFileNames: "[name].mjs",
+            chunkFileNames: "chunks/[name]-[hash].mjs",
+          },
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(process.cwd(), "src"),
