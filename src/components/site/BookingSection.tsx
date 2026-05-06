@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { useI18n, calcStay } from "@/lib/i18n";
 import { AvailabilityCalendar } from "./AvailabilityCalendar";
 import { Loader2, CheckCircle2, Sparkles, Heart, Trophy } from "lucide-react";
-import { createBooking } from "@/server/booking";
+import { createBooking } from "@/server/booking.functions";
 import { cn } from "@/lib/utils";
 
 function ymd(d: Date) {
